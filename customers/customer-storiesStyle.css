@@ -22,12 +22,12 @@ body {
     border-bottom: px solid #e5e5e5;
 }
 
-.header-top,
-.header-bottom {
+.top,
+.bottom {
     border-bottom: px solid #e5e5e5;
 }
 
-.header-container {
+.box {
     max-width: 1400px;
     margin: 0 auto;
     padding: 12px 40px;
@@ -44,19 +44,19 @@ body {
     margin-left: -30px;
 }
 
-.top-links {
+.links {
     display: flex;
     gap: 20px;
     margin-right: -30px;
-    
+
 }
 
-.top-links a {
-    
+.links a {
+
     margin-top: 20px;
     font-size: 15px;
     color: #1f2a44;
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .menu {
@@ -72,11 +72,11 @@ body {
     font-size: 16px;
     color: #1f2a44;
     font-family: "Salesforce Sans", system-ui, -apple-system,
-               BlinkMacSystemFont, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, "Noto Sans",
-               sans-serif, "Apple Color Emoji",
-               "Segoe UI Emoji", "Segoe UI Symbol",
-               "Noto Color Emoji";
+        BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans",
+        sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
 }
 
 .actions {
@@ -87,8 +87,8 @@ body {
 
 }
 
-.btn-primary {
-    background-color:#0e78d5;
+.button1 {
+    background-color: #0e78d5;
     color: white;
     border: none;
     padding: 10px 28px;
@@ -97,10 +97,10 @@ body {
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    
+
 }
 
-.btn-outline {
+.button2 {
     background-color: transparent;
     color: #0e78d5;
     border: 2px solid#0e78d5;
@@ -109,6 +109,44 @@ body {
     padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* minimal dropdown */
+
+.menu li {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 20px;
+    color: #032d60;
+    font-size: 14px;
+}
+
+.item:hover .dropdown {
+    display: block;
+}
+
+.header {
+    position: relative;
+    z-index: 1000;
+}
+
+.dropdown {
+    z-index: 2000;
 }
 
 .hero {
@@ -343,6 +381,7 @@ body {
     color: #1f5aa6;
     font-weight: 600;
 }
+
 .btn-load-more {
     background: transparent;
     border: none;
@@ -382,7 +421,7 @@ body {
     justify-content: center;
 }
 
-.btn-primary-large {
+.bigbutton1 {
     background: #1f5aa6;
     color: #fff;
     border: none;
@@ -394,11 +433,11 @@ body {
     transition: background 0.2s;
 }
 
-.btn-primary-large:hover {
+.bigbutton1:hover {
     background: #174a8a;
 }
 
-.btn-secondary-large {
+.bigbutton2 {
     background: #fff;
     color: #1f5aa6;
     border: 2px solid #1f5aa6;
@@ -410,7 +449,7 @@ body {
     transition: all 0.2s;
 }
 
-.btn-secondary-large:hover {
+.bigbutton2:hover {
     background: #f0f7ff;
 }
 
@@ -546,64 +585,4 @@ body {
     background: #174a8a;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 1024px) {
-    .nav-wrapper {
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-        justify-content: flex-start;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .stories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .cards-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-columns {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary-large,
-    .btn-secondary-large {
-        width: 100%;
-        max-width: 300px;
-    }
 }
